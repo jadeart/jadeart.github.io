@@ -1,126 +1,366 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
+<html>
+<head>
+	<title>vanishing point</title>
+	<meta charset="UTF-8">
+	<script src="" async></script>
+	<style>
+		@import url(https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css);
+		
+		body{ 
+			background:url(backimg4.png);
+			background-repeat: repeat;
+			position:relative;
+			background-color:#000000;
+			margin:0;
+		}
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <title></title>
-        <style>
-    
-            @keyframes bgcolor {
-                0% {
-                    color: #253FFF
-                }
+		#title{
+			font-size:2vw;
+			text-align:center;
+			width:700px;
+			color:#ffffff;
+			font-family: Avenir, Helvetica, sans-serif;
+			font-weight: 100;
+			letter-spacing: 65px;
+			position:fixed;
+			top: 41%;
+			left:49%;
+			transform: translateX(-49%);
+			margin:30px; 
+			line-height:75px;
+		  	}
 
-                30% {
-                    color: #A3FF3C
-                }
+		.button{
+			font-family: Avenir, san-erif;
+			font-size: 15px;
+			width: 100px;
+			text-align:center;
+			color: white;
+			position:fixed;
+			margin:0 auto;
+			top:60%;
+			left: 43.5%;
+			letter-spacing: 5px;
+			padding:7px;
+			border:1px solid white;
+			border-radius:3px;
+			text-decoration:none;
 
-                60% {
-                    color: #FF8846
-                }
+		}
 
-                90% {
-                    color: #FF2E6E
-                }
+		#content{
+			width:100vw;
+			height:100vh;
+			position:relative;
+		}
 
-                100% {
-                    color: #A140FF
-                }
-            }
+		#gallery{
+			position: absolute;
+			width:602px;
+			top:50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			overflow:hidden; 
 
-            body{
-            background:url(https://jadeart.github.io/backimg4.png);
-            background-repeat: repeat;
-                margin:0;
-                background-color: black;
-            }
+		}
 
-            #title{
-
-            font-size:6vw;
-
-            text-align:center;
-            -webkit-animation: bgcolor 20s infinite;
-                animation: bgcolor 10s infinite;
-                -webkit-animation-direction: alternate;
-                animation-direction: alternate;
-            font-family: Avenir, Helvetica, sans-serif;
-            font-weight: bold;
-            font-style:italic;
-            letter-spacing: 5vw;
-            position:absolute;
-            top: 46%;
-            left:52%;
-            transform: translate(-50%, -50%);
-            
-            }
-
-
-			@media screen and (min-width: 1000px) {
-			  #title {
-			     font-size: 60px;
-			     letter-spacing:50px;
-			  }
-			}
-
-            .container{
-                width:70vw;
-                height:70vw;
-                max-width:600px;
-                max-height:600px;
-                position:absolute;
-                top:50%;
-                left:50%;
-                transform:translate(-50%,-50%);
-                border:20px solid white;
-            }
-
-            
-
-            #header{
-
-                position:fixed;
-                top:0;
-                left:0;
-                width:100%;
-                z-index:1;
-            }
-
-        </style>
-
-    </head>
-    <body>
+		.vpimages{position:relative; width:120px; height:120px; float:left; cursor:pointer; overflow:hidden;  }
 
 
+		#i1{ background: url(https://jadeart.github.io/i1.jpg); background-size:300%; background-position: 0 0;}
+		#i2{ background: url(https://jadeart.github.io/i2.jpg); background-size:300%; background-position:-120px 0;}
+		#i3{ background: url(https://jadeart.github.io/i3.jpg); background-size:300%; background-position:-240px 0;}
+		#i4{ background: url(https://jadeart.github.io/i4.jpg); background-size:300%; background-position:-360px 0;}
+		#i5{ background: url(https://jadeart.github.io/i5.jpg); background-size:300%; background-position:-480px 0;}
+		#i6{ background: url(https://jadeart.github.io/i6.jpg); background-size:300%; background-position:0 -120px;}
+		#i7{ background: url(https://jadeart.github.io/i7.jpg); background-size:300%; background-position: -120px -120px;}
+		#i8{ background: url(https://jadeart.github.io/i8.jpg); background-size:300%; background-position: -240px -120px;}
+		#i9{ background: url(https://jadeart.github.io/i9.jpg); background-size:300%; background-position: -360px -120px;}
+		#i10{ background: url(https://jadeart.github.io/i10.jpg); background-size:300%; background-position: -480px -120px;}
+		#i11{ background: url(https://jadeart.github.io/i11.jpg); background-size:300%; background-position: 0 -240px;}
+		#i12{ background: url(https://jadeart.github.io/i12.jpg); background-size:300%; background-position: -120px -240px;}
+		#i13{ background: url(https://jadeart.github.io/i13.jpg); background-size:300%; background-position: -240px -240px;}
+		#i14{ background: url(https://jadeart.github.io/i14.jpg); background-size:300%; background-position: -360px -240px;}
+		#i15{ background: url(https://jadeart.github.io/i15.jpg); background-size:300%; background-position: -480px -240px;}
+		#i16{ background: url(https://jadeart.github.io/i16.jpg); background-size:300%; background-position: 0 -360px;}
+		#i17{ background: url(https://jadeart.github.io/i17.jpg); background-size:300%; background-position: -120px -360px;}
+		#i18{ background: url(https://jadeart.github.io/i18.jpg); background-size:300%; background-position: -240px -360px;}
+		#i19{ background: url(https://jadeart.github.io/i19.jpg); background-size:300%; background-position: -360px -360px;}
+		#i20{ background: url(https://jadeart.github.io/i20.jpg); background-size:300%; background-position: -480px -360px;}
+		#i21{ background: url(https://jadeart.github.io/i21.jpg); background-size:300%; background-position: 0 -480px;}
+		#i22{ background: url(https://jadeart.github.io/i22.jpg); background-size:300%; background-position: -120px -480px;}
+		#i23{ background: url(https://jadeart.github.io/i23.jpg); background-size:300%; background-position: -240px -480px;}
+		#i24{ background: url(https://jadeart.github.io/i24.jpg); background-size:300%; background-position: -360px -480px;}
+		#i25{ background: url(https://jadeart.github.io/i25.jpg); background-size:300%; background-position: -480px -480px;}	
 
-        <div class="container">
-            <img id="imgBanner" src="" alt="" />
-            <img id="header" src="https://jadeart.github.io/head7.png" />
-        </div>
+		.overlay_1{position:absolute; top:0; bottom:0; left:0; right:0; height:100%; width:100%; opacity:0.45; transition: .5s ease; background-color: #000000; background: linear-gradient(to top right, #000 calc(50% - 1px), #fff, #000 calc(50% + 1px) )}
 
-        <h1 id="title">VANISHING</h1>
+		.overlay_2{position:absolute; top:0; bottom:0; left:0; right:0; height:100%; width:100%; opacity:0.45; transition: .5s ease; background-color: #000000; background: linear-gradient(to top left, #000 calc(50% - 1px), #fff, #000 calc(50% + 1px) )}
 
-        <script type="text/javascript">
-            var picPaths = ['https://jadeart.github.io/i1.jpg','https://jadeart.github.io/i2.jpg','https://jadeart.github.io/i3.jpg','https://jadeart.github.io/i4.jpg','https://jadeart.github.io/i5.jpg','https://jadeart.github.io/i6.jpg','https://jadeart.github.io/i8.jpg','https://jadeart.github.io/i9.jpg','https://jadeart.github.io/i10.jpg','https://jadeart.github.io/i12.jpg','https://jadeart.github.io/i13.jpg','https://jadeart.github.io/i16.jpg','https://jadeart.github.io/i18.jpg','https://jadeart.github.io/i23.jpg','https://jadeart.github.io/i25.jpg'];
-            var curPic = -1;
-            //preload the images for smooth animation
-            var imgO = new Array();
-            for(i=0; i < picPaths.length; i++) {
-                imgO[i] = new Image();
-                imgO[i].src = picPaths[i];
-            }
+		.overlay_5{position:absolute; top:0; bottom:0; left:0; right:0; height:100%; width:100%; opacity:0.45; transition: .5s ease; background-color: #000; }
 
-            function swapImage() {
-                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
-                imgCont.src = imgO[curPic].src;
-                setTimeout(swapImage,300);
-            }
+		.overlay_6{position:absolute; top:0; bottom:0; left:0; right:0; height:100%; width:100%; opacity:.93; transition: .5s ease; background-color: #000000; }
 
-            window.onload=function() {
-                imgCont = document.getElementById('imgBanner');
-                imgBanner.style.width="100%";
-                swapImage();
-            }
-        </script>
-    </body>
+ 		.vpimages:hover .overlay_1 {opacity:0;}	
+ 		.vpimages:hover .overlay_2 {opacity:0;}
+ 		.vpimages:hover .overlay_5 {opacity:0;}
+ 		.vpimages:hover .overlay_6 {opacity:0;}
+ 
+ 		.text{font-family: 'NanumSquare', san-serif; color:#88FF8C; font-size: 20px; font-weight: 300; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%); text-align:center;}
+
+ 		.text_2{font-family: 'NanumSquare', san-serif; color:#88FF8C; font-size: 30px; font-weight: 300; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);-ms-transform:translate(-50%,-50%); text-align:center;}
+
+ 		.modal{
+ 			display: none; position: fixed; z-index:1; padding:50px 0; left:0; top:0; width:100%; height:100%;background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.8); overflow:auto; 
+ 		}
+
+ 		.modal-content{
+ 			margin: auto; 
+ 			display: block; 
+ 			position:absolute;
+ 			width:602px;
+ 			top:49%;
+ 			left:50%;
+ 			transform:translate(-50%,-50%); 
+ 			height: auto; 
+ 		}
+
+ 		.close{
+ 			position: absolute;
+ 			width:40px;
+ 			height:40px;
+    		top: 15px;
+    		right: 20px;
+   	 		color: #fff;
+   			font-size: 60px;
+   			transition: 0.3s;
+ 		}
+
+ 		.close:hover{ color: #88FF8C;} 
+
+
+ 		.show-modal{
+ 			opacity:1;
+ 			visibility: visible;
+ 			transform: scale(1.0);
+ 			transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+ 		}
+
+												
+	</style>
+
+</head>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+<div id="content">
+	<div id="gallery" class="animate-bottom">
+
+		<div class="vpimages" data-title="i1">
+			<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i1"/> 
+			<div class="overlay_1">
+			</div>
+		</div>
+
+		<div class="vpimages"  data-title="i2">
+			<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i2"/> 
+			<div class="overlay_5">
+			</div>
+		</div>
+
+		<div class="vpimages"  data-title="i3">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i3"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i4">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i4"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i5">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i5"/> 
+				<div class="overlay_2">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i6">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i6"/>
+				<div class="overlay_5">
+				</div>
+		</div>		
+
+		<div class="vpimages"  data-title="i7">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i7"/>
+				<div class="overlay_1">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i8">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i8"/>
+				<div class="overlay_5">
+				</div>
+		</div>	
+
+		<div class="vpimages"  data-title="i9">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i9"/>
+				<div class="overlay_2">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i10">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i10"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i11">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i11"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i12">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i12"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i13">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i13"/>
+				<div class="overlay_6">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i14">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i14"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i15">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i15"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i16">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i16"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i17">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i17"/> 
+				<div class="overlay_2">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i18">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i18"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i19">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i19"/> 
+				<div class="overlay_1">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i20">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i20"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i21">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i21"/> 
+				<div class="overlay_2">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i22">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i22"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+
+		<div class="vpimages"  data-title="i23">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i23"/>
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i24">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i24"/> 
+				<div class="overlay_5">
+				</div>
+		</div>
+
+		<div class="vpimages"  data-title="i25">
+				<img class="myImg" src="https://jadeart.github.io/image_trans.png" id="i25"/> 
+				<div class="overlay_1">
+				</div>
+		</div>
+
+	</div>
+</div>
+
+<!--The title-->
+<h1 id="title">VANISHING</h1>
+
+<a class=button href="https://jadeart.github.io/vanishingpoint_6.html" >shuffle</a>
+
+<!--The Modal-->
+<div id="myModal" class="modal">
+	<!--close button-->
+	<span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+	<!--modal content(image)-->
+	<img class="modal-content" id="img01">
+</div>
+
+
+
+<script>
+/*	var myVar;
+
+	function myFunction(){
+		myVar = setTimeout(showPage, 1000);
+	}
+
+	function showPage(){
+		document.getElementById("loader").style.display ="none";
+		document.getElementById("gallery").style.display="block";
+	}
+*/
+
+	var modal= document.getElementById('myModal');
+
+    var img = $('.vpimages').find('img');
+	var modalImg = $("#img01");
+
+	$('.vpimages').click(function(){
+		modal.style.display = "block";
+		var newSrc = $(this).first().children().first().css('background').split('"')[1];
+		modalImg.attr('src', newSrc);
+	});
+
+	var span = document.getElementsByClassName("close")[0];
+
+	span.onClick = function(){
+		modal.style.display = "none";
+	}
+
+
+</script>
+
+
+</body>
 </html>

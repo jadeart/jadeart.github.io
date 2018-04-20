@@ -1,0 +1,143 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <style>
+    
+            @keyframes bgcolor {
+                0% {
+                    color: #253FFF
+                }
+
+                30% {
+                    color: #A3FF3C
+                }
+
+                60% {
+                    color: #FF8846
+                }
+
+                90% {
+                    color: #FF2E6E
+                }
+
+                100% {
+                    color: #A140FF
+                }
+            }
+
+            body{
+            background:url(https://jadeart.github.io/backimg4.png);
+            background-repeat: repeat;
+                margin:0;
+                background-color: black;
+            }
+
+            #title{
+
+            font-size:6vw;
+
+            text-align:center;
+            -webkit-animation: bgcolor 20s infinite;
+                animation: bgcolor 10s infinite;
+                -webkit-animation-direction: alternate;
+                animation-direction: alternate;
+            font-family: Avenir, Helvetica, sans-serif;
+            font-weight: bold;
+            font-style:italic;
+            letter-spacing: 5vw;
+            position:absolute;
+            top: 46%;
+            left:52%;
+            transform: translate(-50%, -50%);
+            
+            }
+
+
+			@media screen and (min-width: 1000px) {
+			  #title {
+			     font-size: 60px;
+			     letter-spacing:50px;
+			  }
+			}
+
+            .container{
+                width:70vw;
+                height:70vw;
+                max-width:600px;
+                max-height:600px;
+                position:absolute;
+                top:50%;
+                left:50%;
+                transform:translate(-50%,-50%);
+                border:20px solid white;
+            }
+
+            .button{
+                font-family: Avenir, san-erif;
+                font-size: 15px;
+                width: 100px;
+                text-align:center;
+                background-color: black;
+                color: white;
+                position:fixed;
+                top:60%;
+                left: 43.5%;
+                padding:7px;
+                letter-spacing: 5px;
+                border-radius:3px;
+                text-decoration: none;
+
+                    }
+                        
+
+            #header{
+
+                position:fixed;
+                top:0;
+                left:0;
+                width:100%;
+                z-index:1;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+
+        <div class="container">
+            <img id="imgBanner" src="" alt="" />
+            <img id="header" src="https://jadeart.github.io/head7.png" />
+        </div>
+
+        <h1 id="title">VANISHING</h1>
+        <a class=button href="https://jadeart.github.io/" >back</a>
+
+        <script type="text/javascript">
+            var picPaths = ['https://jadeart.github.io/i1.jpg','https://jadeart.github.io/i2.jpg','https://jadeart.github.io/i3.jpg','https://jadeart.github.io/i4.jpg','https://jadeart.github.io/i5.jpg','https://jadeart.github.io/i6.jpg','https://jadeart.github.io/i8.jpg','https://jadeart.github.io/i9.jpg','https://jadeart.github.io/i10.jpg','https://jadeart.github.io/i12.jpg','https://jadeart.github.io/i13.jpg','https://jadeart.github.io/i16.jpg','https://jadeart.github.io/i18.jpg','https://jadeart.github.io/i23.jpg','https://jadeart.github.io/i25.jpg'];
+            var curPic = -1;
+            //preload the images for smooth animation
+            var imgO = new Array();
+            for(i=0; i < picPaths.length; i++) {
+                imgO[i] = new Image();
+                imgO[i].src = picPaths[i];
+            }
+
+            function swapImage() {
+                curPic = (++curPic > picPaths.length-1)? 0 : curPic;
+                imgCont.src = imgO[curPic].src;
+                setTimeout(swapImage,300);
+            }
+
+            window.onload=function() {
+                imgCont = document.getElementById('imgBanner');
+                imgBanner.style.width="100%";
+                swapImage();
+            }
+        </script>
+    </body>
+</html>
